@@ -45,6 +45,7 @@ const VietNam = () => {
            <Line
             data = {
               {
+                
                 labels:  Object.keys(patients).map((key)=>key),
                 datasets:[{
                       data: Object.keys(patients).map((key)=>patients[key][0]),

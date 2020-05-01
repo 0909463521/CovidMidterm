@@ -20,11 +20,11 @@ const StaticDashboard = (props) => {
         <Row>
            
             <Col xs={6}  >
-                <h3>Việt Nam</h3>
+                <h3 style={{marginLeft:"40%",fontSize:40}}>Việt Nam</h3>
                 <VietNam></VietNam>
             </Col>
             <Col xs={6} >
-                <h3>Thế Giới</h3>
+                <h3 style={{marginLeft:"40%",fontSize:40}}>Thế Giới</h3>
                 <World></World>
             </Col>
             

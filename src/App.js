@@ -19,36 +19,38 @@ function App() {
         
         <Router>
         <div>
-          <nav>
+          
           <Container>
+          
             <Row>
             
-            <Col xs={4}  >
-                <Link style={{ margin:5 , backgroundColor: "white", colors: "black", border: "10px solid #4CAF50" }}  to="/">Home</Link> 
+            
+            <Col  xs={6} style={{ marginTop:30,marginBottom:30   }}   >
+                <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50, marginLeft:"40%" }} to="/map">MAP</Link>
             </Col>
-            <Col xs={4} >
-                <Link style={{ margin:5 , backgroundColor: "white", colors: "black", border: "10px solid #4CAF50" }}  to="/map">map</Link>
-            </Col>
-            <Col xs={4}  >
-                <Link style={{ margin:5 , backgroundColor: "white", colors: "black", border: "10px solid #4CAF50" }} to="/stats">stats</Link>
+            <Col  xs={6} style={{ marginTop:30,marginBottom:30   }}   >
+                <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50,marginLeft:"40%"  }} to="/stats">STATS</Link>
             </Col>
             
             </Row>
-          </Container>
-           
-          </nav>
-  
-          {/* A <Switch> looks through its children <Route>s and
+          
+            <Row>
+               {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/map">
-              <CovidDashboard></CovidDashboard>
-            </Route>
-            <Route path="/stats">
-              <StaticDashboard></StaticDashboard>
-            </Route>
+              <Switch>
+                  <Route path="/map">
+                    <CovidDashboard></CovidDashboard>
+                  </Route>
+                  <Route path="/stats">
+                    <StaticDashboard></StaticDashboard>
+                  </Route>
+                  
+              </Switch>
+            </Row>
             
-          </Switch>
+          </Container>
+
+         
         </div>
       </Router>
         
