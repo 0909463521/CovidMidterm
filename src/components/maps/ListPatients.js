@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
-import {compose, withProps} from "recompose"
-import PatientInfo from './PatientInfo';
 
+import { subDays, startOfToday, format , addDays } from "date-fns";
 
 const axios = require('axios').default;
 
@@ -14,17 +13,40 @@ const SimpleList = ({onPatientButtonClicked , Seekbarsort}) => {
     
     const [patients, setPatients] = useState([]);
 
+    const constantDay = new Date("2019-12-8");
+    const today = startOfToday();   
+    const subday = today - constantDay; 
+    const numberday = subday / 86400000; // milisecond in 1 day
+    const curday = subDays(today,numberday/2 );
+
         function checkvalueSeekbar(arr, Seekbarsort)
     {
-        var dateTMP = new Date("2020-04-12T00:00:00");
+        
 
         let finishresult = new Array() ;
 
         if(Seekbarsort===undefined)
         {
+            Seekbarsort = format(curday, 'yyyy-MM-dd') ;
+            
+            
+            arr.map((item,index) => {
+                // item.verifyDate>"2020-04-12T00:00:00"
+                let a = item.verifyDate.substring(0, 10);
+                
+                if( a <Seekbarsort)
+                {
+                
+                finishresult.push(item)
+                
+                }
+
+            } 
+            )
             
         }
         else{
+
             arr.map((item,index) => {
                 // item.verifyDate>"2020-04-12T00:00:00"
                 let a = item.verifyDate.substring(0, 10);
@@ -39,7 +61,6 @@ const SimpleList = ({onPatientButtonClicked , Seekbarsort}) => {
             } 
             )
 
-        
         }
         return finishresult
     }

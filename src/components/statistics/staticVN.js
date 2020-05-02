@@ -71,10 +71,6 @@ const VietNam = () => {
 
            />
 
-           
-          
-            
-       	
         }
       		
      </div>
