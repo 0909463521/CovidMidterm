@@ -1,10 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {compose, withProps} from "recompose"
 import {withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react-google-maps"
-
+import { subDays, startOfToday, format , addDays } from "date-fns";
 const CovidGoogleMap = ({onPatientMarkerClicked,onLocationButtonClick , Seekbarsort}) => {
     let curLat ;
     let curLong;
+    const constantDay = new Date("2019-12-8");
+    const today = startOfToday();   
+    const subday = today - constantDay; 
+    const numberday = subday / 86400000; // milisecond in 1 day
+    const curday = subDays(today,numberday/2 );
+
     
     if(onLocationButtonClick===undefined)
     {
@@ -26,7 +32,22 @@ const CovidGoogleMap = ({onPatientMarkerClicked,onLocationButtonClick , Seekbars
 
         if(Seekbarsort===undefined)
         {
+            Seekbarsort = format(curday, 'yyyy-MM-dd') ;
             
+            
+            arr.map((item,index) => {
+                // item.verifyDate>"2020-04-12T00:00:00"
+                let a = item.verifyDate.substring(0, 10);
+                
+                if( a <Seekbarsort)
+                {
+                
+                finishresult.push(item)
+                
+                }
+
+            } 
+            ) 
         }
         else{
             arr.map((item,index) => {
@@ -82,7 +103,7 @@ const CovidGoogleMap = ({onPatientMarkerClicked,onLocationButtonClick , Seekbars
     )((props)=> (
         <GoogleMap defaultZoom={16} defaultCenter={{lat: curLat, lng: curLong}}>
             {finalSortedPatients.map((patient, index) => (<Marker key={index} position={{lat: patient.lat, lng: patient.lng}} onClick={()=>{
-                onPatientMarkerClicked(patient)}}>
+                onPatientMarkerClicked(patient,index)}}>
             </Marker>))}
         </GoogleMap>
     ));

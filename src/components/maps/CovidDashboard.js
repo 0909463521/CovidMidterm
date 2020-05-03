@@ -15,8 +15,10 @@ import MySlider from './MySlider';
 const CovidDashboard = (props) => {
     const [currentPatient, setCurrentPatient] = useState();
     const [SeekbarPatients, setSeekbarPatients] = useState();
-    const patientMarkerClickedHandler = (patient) => {
+    const [indexPatient , setindexPatient] = useState();
+    const patientMarkerClickedHandler = (patient,index) => {
         setCurrentPatient(patient);
+        console.log("vi tri: " +index)
     }
     const patientButtonClickedHandler = (patient) => {
         setCurrentPatient(patient);
