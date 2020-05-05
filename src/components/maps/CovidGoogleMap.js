@@ -88,7 +88,12 @@ const CovidGoogleMap = ({onPatientMarkerClicked,onLocationButtonClick , Seekbars
             )
     }, []);
 
-    const finalSortedPatients = checkvalueSeekbar(patients,Seekbarsort)
+    const sortedPatients = patients.sort(function compare(a, b) {
+        var dateA = new Date(a.verifyDate);
+        var dateB = new Date(b.verifyDate);
+        return dateA - dateB;
+      }).reverse();
+    const finalSortedPatients = checkvalueSeekbar(sortedPatients,Seekbarsort)
 
     const MyMapComponent = compose(
         withProps({
@@ -102,8 +107,8 @@ const CovidGoogleMap = ({onPatientMarkerClicked,onLocationButtonClick , Seekbars
         withGoogleMap
     )((props)=> (
         <GoogleMap defaultZoom={16} defaultCenter={{lat: curLat, lng: curLong}}>
-            {finalSortedPatients.map((patient, index) => (<Marker key={index} position={{lat: patient.lat, lng: patient.lng}} onClick={()=>{
-                onPatientMarkerClicked(patient,index)}}>
+            {finalSortedPatients.map((patient, index) => (<Marker key={index}  position={{lat: patient.lat, lng: patient.lng}} onClick={()=>{
+                onPatientMarkerClicked(patient,index,finalSortedPatients)}}>
             </Marker>))}
         </GoogleMap>
     ));

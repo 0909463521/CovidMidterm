@@ -24,7 +24,6 @@ function App() {
           
             <Row>
             
-            
             <Col  xs={6} style={{ marginTop:30,marginBottom:30   }}   >
                 <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50, marginLeft:"40%" }} to="/map">MAP</Link>
             </Col>

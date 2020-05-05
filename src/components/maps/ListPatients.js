@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-
+import ListGroup from 'react-bootstrap/ListGroup'
 import { subDays, startOfToday, format , addDays } from "date-fns";
 
 const axios = require('axios').default;
@@ -8,7 +8,7 @@ const axios = require('axios').default;
 var valuesortnumber = null;
 
 
-const SimpleList = ({onPatientButtonClicked , Seekbarsort}) => {
+const SimpleList = ({onPatientButtonClicked , refs,indexMarker, Seekbarsort}) => {
     
     
     const [patients, setPatients] = useState([]);
@@ -65,7 +65,7 @@ const SimpleList = ({onPatientButtonClicked , Seekbarsort}) => {
         return finishresult
     }
     
-
+   
     useEffect(() => {
         fetch("https://maps.vnpost.vn/apps/covid19/api/patientapi/list")
             .then(res => res.json())
@@ -93,18 +93,31 @@ const SimpleList = ({onPatientButtonClicked , Seekbarsort}) => {
       
         
     const finalSortedPatients = checkvalueSeekbar(sortedPatients,Seekbarsort)
-    
+
+    useEffect(() => {
+            console.log(refs[indexMarker])
+            if(refs[indexMarker]){
+            refs[indexMarker].current.scrollIntoView({
+                behavior: "smooth",
+                block: "start"});
+            }
+        
+    },[indexMarker])
     
     const PatientsList = () => (
 
         <div>
-        <h4> {valuesortnumber}  Danh sách các bệnh nhận sort Desc </h4>
-        <div className ="ScrollView">
+        <h4>  Danh sách các bệnh nhận sort Desc </h4>
+        <div className ="list-group">
         <div>
             
             {
                 finalSortedPatients.map((item,index) => (
-                <div key={index} style={{ backgroundColor: "white", colors: "black", border: "2px solid #4CAF50" ,width: "100%" ,margin:5 }}>
+                
+                <div key={index}  style={
+                    (index === indexMarker) ?  {  backgroundColor: "red", colors: "black", border: "2px solid #4CAF50" ,width: "100%" ,margin:5 } :  {  backgroundColor: "white", colors: "black", border: "2px solid #4CAF50" ,width: "100%" ,margin:5 }
+                   }>
+                <div ref={refs[index]} />
                 <h5 color="red">
                 Tên: {item.name}   
                 </h5>

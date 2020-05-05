@@ -11,15 +11,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MySlider from './MySlider';
 
 
-
+let refs = [];
 const CovidDashboard = (props) => {
     const [currentPatient, setCurrentPatient] = useState();
     const [SeekbarPatients, setSeekbarPatients] = useState();
+
     const [indexPatient , setindexPatient] = useState();
-    const patientMarkerClickedHandler = (patient,index) => {
+    const [patients, setPatients] = useState([]);
+    const patientMarkerClickedHandler = (patient,index,patients) => {
         setCurrentPatient(patient);
+        setPatients(patients);
+        setindexPatient(index);
         console.log("vi tri: " +index)
     }
+
+    refs = patients.reduce((acc, currentPatient,index) => {
+        acc[index] = React.createRef();
+        return acc;
+      }, {});
+
     const patientButtonClickedHandler = (patient) => {
         setCurrentPatient(patient);
     }
@@ -40,7 +50,7 @@ const CovidDashboard = (props) => {
 
     return ( <Container>
         <Row>
-            <Col xs={2} ><ListPatients onPatientButtonClicked={patientButtonClickedHandler}  Seekbarsort={SeekbarPatients} /></Col>  
+            <Col xs={2} ><ListPatients onPatientButtonClicked={patientButtonClickedHandler}  Seekbarsort={SeekbarPatients} refs = {refs} indexMarker={indexPatient} /></Col>  
             <Col xs={7} ><CovidGoogleMap onPatientMarkerClicked={patientMarkerClickedHandler} onLocationButtonClick={currentPatient} Seekbarsort={SeekbarPatients} /></Col>
             <Col xs={3} >
                 <h5>Thông tin chi tiết bệnh nhân</h5>
