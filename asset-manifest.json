@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/CovidMidterm/static/css/main.d21d54fa.chunk.css",
-    "main.js": "/CovidMidterm/static/js/main.8ecd3cff.chunk.js",
-    "main.js.map": "/CovidMidterm/static/js/main.8ecd3cff.chunk.js.map",
+    "main.css": "/CovidMidterm/static/css/main.3564dab7.chunk.css",
+    "main.js": "/CovidMidterm/static/js/main.d5ad43ed.chunk.js",
+    "main.js.map": "/CovidMidterm/static/js/main.d5ad43ed.chunk.js.map",
     "runtime-main.js": "/CovidMidterm/static/js/runtime-main.80b20e35.js",
     "runtime-main.js.map": "/CovidMidterm/static/js/runtime-main.80b20e35.js.map",
     "static/css/2.69121389.chunk.css": "/CovidMidterm/static/css/2.69121389.chunk.css",
-    "static/js/2.dd5beb63.chunk.js": "/CovidMidterm/static/js/2.dd5beb63.chunk.js",
-    "static/js/2.dd5beb63.chunk.js.map": "/CovidMidterm/static/js/2.dd5beb63.chunk.js.map",
+    "static/js/2.6ad249c5.chunk.js": "/CovidMidterm/static/js/2.6ad249c5.chunk.js",
+    "static/js/2.6ad249c5.chunk.js.map": "/CovidMidterm/static/js/2.6ad249c5.chunk.js.map",
     "index.html": "/CovidMidterm/index.html",
-    "precache-manifest.7de687164556b928dd483b8da362a697.js": "/CovidMidterm/precache-manifest.7de687164556b928dd483b8da362a697.js",
+    "precache-manifest.21a23da4bbb3431660cc4cd5a3e68645.js": "/CovidMidterm/precache-manifest.21a23da4bbb3431660cc4cd5a3e68645.js",
     "service-worker.js": "/CovidMidterm/service-worker.js",
     "static/css/2.69121389.chunk.css.map": "/CovidMidterm/static/css/2.69121389.chunk.css.map",
-    "static/css/main.d21d54fa.chunk.css.map": "/CovidMidterm/static/css/main.d21d54fa.chunk.css.map",
-    "static/js/2.dd5beb63.chunk.js.LICENSE.txt": "/CovidMidterm/static/js/2.dd5beb63.chunk.js.LICENSE.txt",
+    "static/css/main.3564dab7.chunk.css.map": "/CovidMidterm/static/css/main.3564dab7.chunk.css.map",
+    "static/js/2.6ad249c5.chunk.js.LICENSE.txt": "/CovidMidterm/static/js/2.6ad249c5.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/CovidMidterm/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.80b20e35.js",
     "static/css/2.69121389.chunk.css",
-    "static/js/2.dd5beb63.chunk.js",
-    "static/css/main.d21d54fa.chunk.css",
-    "static/js/main.8ecd3cff.chunk.js"
+    "static/js/2.6ad249c5.chunk.js",
+    "static/css/main.3564dab7.chunk.css",
+    "static/js/main.d5ad43ed.chunk.js"
   ]
 }
