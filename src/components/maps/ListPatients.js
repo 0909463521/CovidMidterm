@@ -95,7 +95,7 @@ const SimpleList = ({onPatientButtonClicked , refs,indexMarker, Seekbarsort}) =>
     const finalSortedPatients = checkvalueSeekbar(sortedPatients,Seekbarsort)
 
     useEffect(() => {
-            console.log(refs[indexMarker])
+            console.log(indexMarker)
             if(refs[indexMarker]){
             refs[indexMarker].current.scrollIntoView({
                 behavior: "smooth",
