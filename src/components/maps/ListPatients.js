@@ -115,7 +115,7 @@ const SimpleList = ({onPatientButtonClicked , refs,indexMarker, Seekbarsort}) =>
                 finalSortedPatients.map((item,index) => (
                 
                 <div key={index}  style={
-                    (index === indexMarker) ?  {  backgroundColor: "red", colors: "black", border: "2px solid #4CAF50" ,width: "100%" ,margin:5 } :  {  backgroundColor: "white", colors: "black", border: "2px solid #4CAF50" ,width: "100%" ,margin:5 }
+                    (index === indexMarker) ?  {  backgroundColor: "pink", colors: "black", border: "2px solid #4CAF50" ,width: "100%" ,margin:5 } :  {  backgroundColor: "white", colors: "black", border: "2px solid #4CAF50" ,width: "100%" ,margin:5 }
                    }>
                 <div ref={refs[index]} />
                 <h5 color="red">
