@@ -48,20 +48,22 @@ const VietNam = () => {
                 datasets:[{
                       data: Object.keys(patients).map((key)=>patients[key][0]),
                       label:"Số ca nhiễm",
-                     
+                      borderColor:"#3333ff",
                       fill:true
                 },
                 {
                       data: Object.keys(patients).map((key)=>patients[key][1]),
-                      label:"Nghi nhiễm",
-                     
+                      label:"Số ca nghi nhiễm",
+                      borderColor:"#ff0000",
                       fill:true
+                     
                 },
                 {
                       data: Object.keys(patients).map((key)=>patients[key][2]),
-                      label:"Đã phục hồi",
-                    
+                      label:"Số ca đã phục hồi",
+                      borderColor:"#00ff00",
                       fill:true
+                      
                 }
                 ]
               }
