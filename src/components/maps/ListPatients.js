@@ -102,7 +102,7 @@ const SimpleList = ({onPatientButtonClicked , refs,indexMarker, Seekbarsort}) =>
                 block: "start"});
             }
         
-    },[indexMarker])
+    },[refs])
     
     const PatientsList = () => (
 
