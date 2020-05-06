@@ -25,10 +25,10 @@ function App() {
             <Row>
             
             <Col  xs={6} style={{ marginTop:30,marginBottom:30   }}   >
-                <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50, marginLeft:"40%" }} to="/map">MAP</Link>
+                <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50, marginLeft:"40%" }} to="/CovidMidterm/map">MAP</Link>
             </Col>
             <Col  xs={6} style={{ marginTop:30,marginBottom:30   }}   >
-                <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50,marginLeft:"40%"  }} to="/stats">STATS</Link>
+                <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50,marginLeft:"40%"  }} to="/CovidMidterm/stats">STATS</Link>
             </Col>
             
             </Row>
@@ -37,10 +37,10 @@ function App() {
                {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
               <Switch>
-                  <Route path="/map">
+                  <Route path="/CovidMidterm/map">
                     <CovidDashboard></CovidDashboard>
                   </Route>
-                  <Route path="/stats">
+                  <Route path="/CovidMidterm/stats">
                     <StaticDashboard></StaticDashboard>
                   </Route>
                   
