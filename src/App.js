@@ -7,7 +7,6 @@ import './App.css';
 
 import CovidDashboard from "./components/maps/CovidDashboard";
 import StaticDashboard from "./components/statistics/StaticDashboard"
-import VTB from "./components/home/myhome"
 import {
     BrowserRouter as Router,
     Switch,
@@ -24,13 +23,11 @@ function App() {
           <Container>
           
             <Row>
-            <Col  xs={4} style={{ marginTop:30,marginBottom:30   }}   >
-                <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50, marginLeft:"40%" }} to="/">HOME</Link>
-            </Col>
-            <Col  xs={4} style={{ marginTop:30,marginBottom:30   }}   >
+            
+            <Col  xs={6} style={{ marginTop:30,marginBottom:30   }}   >
                 <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50, marginLeft:"40%" }} to="/map">MAP</Link>
             </Col>
-            <Col  xs={4} style={{ marginTop:30,marginBottom:30   }}   >
+            <Col  xs={6} style={{ marginTop:30,marginBottom:30   }}   >
                 <Link style={{ margin:5 , backgroundColor: "pink", colors: "black", border: "2px solid #F2866F",fontSize:50,marginLeft:"40%"  }} to="/stats">STATS</Link>
             </Col>
             
@@ -40,9 +37,6 @@ function App() {
                {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
               <Switch>
-                  <Route exact path="/">
-                    <VTB></VTB>
-                  </Route>
                   <Route path="/map">
                     <CovidDashboard></CovidDashboard>
                   </Route>
