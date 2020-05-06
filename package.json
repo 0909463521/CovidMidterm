@@ -1,8 +1,12 @@
 {
   "name": "react-covid",
-  "homepage": "https://1653005.github.io/CovidMidterm/",
   "version": "0.1.0",
   "private": true,
+  "engineStrict": true,
+  "engines": {
+    "node": "8.16.0",
+    "npm": "6.14.4"
+  },
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/lab": "^4.0.0-alpha.50",
@@ -15,6 +19,7 @@
     "d3-scale": "^3.2.1",
     "date-fns": "^2.12.0",
     "fetch-mock": "^9.4.0",
+    "if-env": "^1.0.4",
     "install": "^0.13.0",
     "npm": "^6.14.4",
     "prop-types": "^15.7.2",
@@ -30,15 +35,20 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-scroll": "^1.7.16",
-    "react-slider": "^1.0.3"
+    "react-slider": "^1.0.3",
+    "serve": "^11.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "npm run dev",
+    "start:prod": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
